@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar color="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:#fff; padding-left: 5%">Enter OTP</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="tertiary">
+  <div class="header_title">
+    <p>
+      Verify OTP
+    </p>
+  </div>
+
+  <div style="padding-left: 20px; padding-right: 20px">
+    <ion-row>
+      <ion-col size="12" class="div-form">
+        <form>
+          <div>
+            <ion-input
+              ngModel
+              [(ngModel)]="t1"
+              name="a"
+              #a
+              (keyup)="moveFocus($event,b,'')"
+              type="tel"
+              placeholder="-"
+              
+            >
+            </ion-input>
+          </div>
+
+          <div>
+            <ion-input
+              [(ngModel)]="t2"
+              ngModel
+              name="b"
+              #b
+              (keyup)="moveFocus($event,c,a)"
+              type="tel"
+              placeholder="-"
+              
+            >
+            </ion-input>
+          </div>
+
+          <div>
+            <ion-input
+              [(ngModel)]="t3"
+              ngModel
+              name="c"
+              #c
+              (keyup)="moveFocus($event,d,b)"
+              type="tel"
+              placeholder="-"
+              
+            >
+            </ion-input>
+          </div>
+
+          <div>
+            <ion-input
+              [(ngModel)]="t4"
+              ngModel
+              name="d"
+              #d
+              (keyup)="moveFocus($event,'',c)"
+              type="tel"
+              placeholder="-"
+            >
+            </ion-input>
+          </div>
+        </form>
+      </ion-col>
+    </ion-row>
+
+    <div class="ion-margin" class="container-login100-form-btn">
+      <button (click)="verify()" class="login100-form-btn">Verify otp</button>
+    </div>
+  </div>
+  <p
+    align="right"
+    style="
+      padding-right: 3vh;
+      margin-top: 25px;
+      font-size: medium;
+      color: dark;"
+      
+    (click)="resendOTP()"
+  >
+    <b> Resend OTP</b>
+  </p>
+  <div id="snackbar"> <span id="snackbar_error"></span></div>
+
+</ion-content>

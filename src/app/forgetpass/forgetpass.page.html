@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar color="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:#fff; padding-left: 5%;">Forgot Password</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="tertiary">
+  <div style="margin-top: 10%">
+    <p class="forgot_label" align="center">
+      <strong> Forgot Password ?</strong> <br />
+    </p>
+    <p align="center" style="
+        letter-spacing: 0.2px;
+        font-size: small;
+        color: var(--ion-color-dark);
+        margin-top: 10px;
+      ">
+      <strong>We will send you an OTP to reset your Password</strong>
+    </p>
+  </div>
+
+  <div style="margin-top: 10%; padding-left: 5%; padding-right: 5%">
+    <form #form="ngForm">
+      <div class="wrap-input100 validate-input m-b-20" data-validate="Enter registered mobile number">
+        <input class="input100" [(ngModel)]="mobileNo" name="mob" (keyup)="checkMob($event.target.value)" type="number"
+          required />
+        <span class="focus-input100" data-placeholder="Enter your mobile number"></span>
+      </div>
+      
+      <ion-text class="error_msg" color="danger" *ngIf="mobile_no"> Enter valid 10 digits number.</ion-text>
+      <ion-text class="error_msg" color="danger" *ngIf="mobile_no_not_register"> This mobile number is not registered with us.</ion-text>
+
+      <!-- <ion-item>
+        <ion-label>Enter mobile number</ion-label>
+        <ion-input
+          [(ngModel)]="mobileNo"
+          name="mob"
+          (keyup)="checkMob($event.target.value)"
+          type="number"
+          required
+        ></ion-input>
+      </ion-item> -->
+
+      <div class="container-login100-form-btn">
+        <button [disabled]="!btnView" (click)="otpPage(form)" class="login100-form-btn">
+          Continue
+        </button>
+      </div>
+
+      <!-- <ion-button
+        [disabled]="!btnView"
+        (click)="continue()"
+        expand="block"
+        mode="ios"
+        color="danger"
+      >
+        Click me
+      </ion-button> -->
+    </form>
+  </div>
+  <div id="snackbar"> <span id="snackbar_error"></span></div>
+
+  <div *ngIf="loader_visible" class="lds-ripple">
+    <div></div>
+    <div></div>
+  </div>
+  
+</ion-content>

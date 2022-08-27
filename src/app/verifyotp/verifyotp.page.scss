@@ -1,0 +1,639 @@
+
+
+
+
+// /*//////////////////////////////////////////////////////////////////
+// [ FONT ]*/
+
+
+
+
+
+
+// /*//////////////////////////////////////////////////////////////////
+// [ RESTYLE TAG ]*/
+
+// * {
+// 	margin: 0px; 
+// 	padding: 0px; 
+// 	box-sizing: border-box;
+// }
+
+
+
+
+// /*---------------------------------------------*/
+// a {
+// 
+// font-family: 'Open Sans', sans-serif;	font-size: 14px;
+// 	line-height: 1.7;
+// 	color: #666666;
+// 	margin: 0px;
+// 	transition: all 0.4s;
+// 	-webkit-transition: all 0.4s;
+//   -o-transition: all 0.4s;
+//   -moz-transition: all 0.4s;
+// }
+
+// a:focus {
+// 	outline: none !important;
+// }
+
+// a:hover {
+// 	text-decoration: none;
+//   color: #333333;
+// }
+
+// /*---------------------------------------------*/
+// h1,h2,h3,h4,h5,h6 {
+// 	margin: 0px;
+// }
+
+// p {
+// 
+// font-family: 'Open Sans', sans-serif;	font-size: 14px;
+// 	line-height: 1.7;
+// 	color: #666666;
+// 	margin: 0px;
+// }
+
+// ul, li {
+// 	margin: 0px;
+// 	list-style-type: none;
+// }
+
+
+// /*---------------------------------------------*/
+// input {
+// 	outline: none;
+// 	border: none;
+// }
+
+// textarea {
+//   outline: none;
+//   border: none;
+// }
+
+// textarea:focus, input:focus {
+//   border-color: transparent !important;
+// }
+
+// input:focus::-webkit-input-placeholder { color:transparent; }
+// input:focus:-moz-placeholder { color:transparent; }
+// input:focus::-moz-placeholder { color:transparent; }
+// input:focus:-ms-input-placeholder { color:transparent; }
+
+// textarea:focus::-webkit-input-placeholder { color:transparent; }
+// textarea:focus:-moz-placeholder { color:transparent; }
+// textarea:focus::-moz-placeholder { color:transparent; }
+// textarea:focus:-ms-input-placeholder { color:transparent; }
+
+// input::-webkit-input-placeholder { color: #adadad;}
+// input:-moz-placeholder { color: #adadad;}
+// input::-moz-placeholder { color: #adadad;}
+// input:-ms-input-placeholder { color: #adadad;}
+
+// textarea::-webkit-input-placeholder { color: #adadad;}
+// textarea:-moz-placeholder { color: #adadad;}
+// textarea::-moz-placeholder { color: #adadad;}
+// textarea:-ms-input-placeholder { color: #adadad;}
+
+// /*---------------------------------------------*/
+// button {
+// 	outline: none !important;
+// 	border: none;
+// 	background: transparent;
+// }
+
+// button:hover {
+// 	cursor: pointer;
+// }
+
+// iframe {
+// 	border: none !important;
+// }
+
+
+// /*//////////////////////////////////////////////////////////////////
+// [ Utility ]*/
+// .txt1 {
+// 
+// font-family: 'Open Sans', sans-serif;  font-size: 15px;
+//   color: #999999;
+//   line-height: 1.5;
+// }
+
+// .txt2 {
+// 
+// font-size: 15px;
+//   color: #00a1fb;
+//   line-height: 1.5;
+// }
+
+// /*//////////////////////////////////////////////////////////////////
+// [ login ]*/
+
+// .limiter {
+//   width: 100%;
+//   margin: 0 auto;
+// }
+
+// .container-login100 {
+//   width: 100%;  
+//   min-height: 100vh;
+//   display: -webkit-box;
+//   display: -webkit-flex;
+//   display: -moz-box;
+//   display: -ms-flexbox;
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 15px;
+//   background: #fff;  
+// }
+
+// .wrap-login100 {
+//   width: 390px;
+//   background: #fff;
+// }
+
+
+// /*------------------------------------------------------------------
+// [ Form ]*/
+
+// .login100-form {
+//   width: 100%;
+// }
+
+// .login100-form-title {
+//   display: block;
+// 
+// font-size: 30px;
+// font-weight: 200;
+//   color: #333333;
+//   line-height: 1.2;
+//   text-align: center;
+// }
+
+// .login100-form-avatar {
+//   display: block;
+//   width: 110px;
+//   height: 110px;
+//   border-radius: 50%;
+//   border:3px solid #666967;
+//     box-shadow: 0 10px 30px 0px rgba(50, 83, 148, 0.5);
+
+//   overflow: hidden;
+//   margin: 0 auto;
+// }
+
+// .login100-form-avatar img {
+//   width: 100%;
+// }
+
+// /*------------------------------------------------------------------
+// [ Input ]*/
+
+// .wrap-input100 {
+//   width: 100%;
+//   position: relative;
+//   border-bottom: 2px solid #d9d9d9;
+// }
+
+// .input100 {
+// 
+// font-size: 18px;
+//   color: #555555;
+//   line-height: 1.2;
+
+//   display: block;
+//   width: 100%;
+//   height: 52px;
+//   background: transparent;
+//   padding: 0 5px;
+// }
+
+// /*---------------------------------------------*/ 
+// .focus-input100 {
+//   position: absolute;
+
+//   display: block;
+//   width: 100%;
+//   height: 100%;
+//   top: 0;
+//   left: 0;
+//   pointer-events: none;
+// }
+
+// .focus-input100::before {
+//   content: "";
+//   display: block;
+//   position: absolute;
+//   bottom: -2px;
+//   left: 0;
+//   width: 0;
+//   height: 2px;
+
+//   -webkit-transition: all 0.4s;
+//   -o-transition: all 0.4s;
+//   -moz-transition: all 0.4s;
+//   transition: all 0.4s;
+
+//   background: #57b846;
+// }
+
+// .focus-input100::after {
+//   
+//   font-size: 12px;
+//   color: #999999;
+//   line-height: 1.2;
+
+//   content: attr(data-placeholder);
+//   display: block;
+//   width: 100%;
+//   position: absolute;
+//   top: -5px;
+//   left: 0px;
+//   padding-left: 5px;
+
+//   -webkit-transition: all 0.4s;
+//   -o-transition: all 0.4s;
+//   -moz-transition: all 0.4s;
+//   transition: all 0.4s;
+// }
+
+// .input100:focus + .focus-input100::after {
+//   top: -20px;
+//   font-size: 15px;
+// }
+
+// .input100:focus + .focus-input100::before {
+//   width: 100%;
+// }
+
+// .has-val.input100 + .focus-input100::after {
+//   top: -20px;
+//   font-size: 15px;
+// }
+
+// .has-val.input100 + .focus-input100::before {
+//   width: 100%;
+// }
+
+
+// /*------------------------------------------------------------------
+// [ Button ]*/
+
+*{
+    font-family: 'Ubuntu', sans-serif !important;
+}
+.container-login100-form-btn {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.login100-form-btn {
+
+font-size: 12px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 45px;
+background-image: linear-gradient(to right, #00a1fb, #00a1fb, #00a1fb, #00a1fb, #00a1fb);
+  border-radius: 5px;
+
+ 
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.login100-form-btn:hover  {
+  background-color: #333333;
+  box-shadow: 1px 1px 12px 1px rgba(186,186,186,0.25);
+  
+}
+
+.forgot_label{
+	font-size: 1em;
+    color: var(--ion-color-dark);
+	
+}
+
+
+
+ form{
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+    div{
+        margin-top: 23px;
+        margin-right: 5px;
+        h2{
+            margin: 0;
+            font-size: 12px;
+            color: #b6b6be;
+        }
+        ion-input{
+            text-align: center;
+            border: 1px solid #a0a0a0;
+            border-radius: 5px;
+            margin-top: 8px;
+            font-size: 14px;
+            padding: 3px !important;
+            padding-left: 0px !important;
+            color: #383838;
+            font-weight: 600;
+            --padding-start: 0;
+        }
+        &:last-child{
+            margin-top: 23px;
+            margin-right: 0px;
+        }
+    }
+}
+
+
+
+
+    /*================================== MEDIA QUERIES, FOR ONLY DESKTOPS ==============================*/
+    .body{
+        background-image: url();
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-top: -3;
+    }
+    .item-md{
+        padding-left: 0px;
+    }
+    .div-txt{
+        margin-top: 5%;
+    }
+    .title{
+        text-align: center;
+
+        // font-size:  45px;
+        font-weight: 600;
+        color:#101637;
+    }
+    ion-input{
+          background-color:var(--ion-color-tertiary) !important;
+        padding-top: 10px;
+        
+        padding-left: 30px;
+        padding-right: 30px;
+         
+        // box-shadow: 10px 10px 5px 0px rgba(245,242,242,1);
+    }
+    .description{
+        text-align: center;
+
+        font-size: 16px;
+        margin-top: 0px;
+        color:#101637;
+    }
+    .div-form{
+        padding-bottom: 0px;
+    }
+    .item-ios{
+        padding-left: 0px !important;
+    }
+    .form-login{
+        width: 60%;
+        padding-left: 20px;
+        padding-right: 20px;
+        display: block;
+        margin: 0px auto;
+    }
+    .forgot-password{
+        float: right;
+        margin-top: 10px;
+        color: #ff8993;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15px;
+        padding-right: 20px;
+    }
+    .icon{
+        font-size: 60px;
+        padding: 10px;
+    }
+    .btn{
+        width: 80%;
+        margin-top: 60px !important;
+        padding:30px;
+        background: linear-gradient(to right, #fec180, #ff8993) !important;
+        font-size: 17px;
+        font-weight: 600;
+        box-shadow: none;
+        display: block;
+        margin: 0px auto;
+    }
+    .spacer{
+        margin-bottom: 0% !important;
+    }
+    ::placeholder {
+        color: #878787 !important;
+      }
+    .create-account{
+          text-align: center;
+          display: block;
+          margin-top: 15px;
+
+          font-size: 15px;
+    }
+    .create{
+          text-align: center;
+          display: block;
+          color: #ff8993;
+          font-weight: 600;
+
+          font-size: 15px;
+          text-decoration: none;
+    }
+    .error_msg {
+        font-size: 0.8em;
+        margin-bottom: 1vh;
+      }
+/*================================== END MEDIA QUERIES, FOR ONLY DESKTOPS ==============================*/
+
+/*================================== MEDIA QUERIES, FOR ONLY IPHONE, ANDROID, ETC.. ==============================*/
+    @media only screen and (min-width: 320px) and (max-width: 812px){
+        .body{
+            background-image: url();
+            background-position: center;
+            background-size: auto;
+            background-repeat: no-repeat;
+            margin-top: -3%;
+        }
+        .div-txt{
+            margin-top: 150px;
+        }
+        .title{
+            text-align: center;
+    
+            // font-size:  45px;
+            font-weight: 600;
+            color:#101637;
+        }
+        ion-input{
+            background-color: rgb(255, 255, 255) !important;
+            padding-top: 10px;
+            
+            padding-left: 30px;
+            padding-right: 30px;
+             
+            // box-shadow: 10px 10px 5px 0px rgba(245,242,242,1);
+            
+        }
+        .description{
+            text-align: center;
+    
+            font-size: 16px;
+            margin-top: 0px;
+            color:#101637;
+        }
+        .div-form{
+            padding-bottom: 2px;
+        }
+        .item-ios{
+            padding-left: 0px !important;
+        }
+        .form-login{
+            width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .forgot-password{
+            float: right;
+            margin-top: 10px;
+            color: red;
+            text-decoration: none;
+            font-weight: 600;
+
+            font-size: 15px;
+            padding-right: 20px;
+        }
+        .icon{
+            font-size: 60px;
+            padding: 10px;
+        }
+        .btn{
+            width: 100%;
+            margin-top: 30px;
+            padding:30px;
+            background: linear-gradient(to right, #fec180, #ff8993) !important;
+
+            font-size: 17px;
+            font-weight: 600;
+            box-shadow: none;
+        }
+        .spacer{
+            margin-bottom: 40% !important;
+        }
+        ::placeholder {
+            color: #878787 !important;
+
+          }
+        .create-account{
+              text-align: center;
+              display: block;
+              margin-top: 15px;
+    
+              font-size: 15px;
+        }
+        .create{
+              text-align: center;
+              display: block;
+              color: red;
+              font-weight: 600;
+    
+              font-size: 15px;
+              text-decoration: none;
+        }
+    }
+/*================================== END MEDIA QUERIES, FOR ONLY IPHONE, ANDROID, ETC ==============================*/
+
+/*================================== MEDIA QUERIES, FOR ONLY TABLETS ==============================*/
+    @media only screen and (min-width: 768px) and (max-width: 900px){
+        .div-txt{
+            margin-top: 340px;
+        }
+        .body{
+            margin-top: -23%;
+            background-position: fixed;
+            background-size: auto;
+            background-repeat: no-repeat;
+        }
+        .form-login{
+            width: 70%;
+            padding-left: 20px;
+            padding-right: 20px;
+            display: block;
+            margin: 0px auto;
+        }
+        .div-form{
+            padding-bottom: 22%;
+        }
+        .btn{
+            width: 80%;
+            margin-top: 60px !important;
+            padding:30px;
+            background: linear-gradient(to right, #fec180, #ff8993) !important;
+
+            font-size: 17px;
+            font-weight: 600;
+            box-shadow: none;
+            display: block;
+            margin: 0px auto;
+        }
+    }
+/*================================== END MEDIA QUERIES, FOR ONLY TABLETS ==============================*/
+
+.primary-color{
+    color:#00a1fb
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:#fff; padding-left: 5%">Mobile Verification</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="tertiary">
+  <div class="header_title">
+    <p>
+      To change your password, we will send you an OTP on your registered mobile
+      number to verify.
+    </p>
+  </div>
+
+  <div>
+    <div style="padding-left: 5%; padding-right: 5%">
+      <form #form="ngForm">
+        <div
+          class="wrap-input100 validate-input m-b-20"
+          data-validate="Enter registered mobile number"
+        >
+          <input
+            class="input100"
+            [(ngModel)]="mobileNo"
+            name="mob"
+            (keyup)="checkMob($event)"
+            type="number"
+            required=true
+          />
+          <span
+            class="focus-input100"
+            data-placeholder="Enter your mobile number"
+          ></span>
+        </div>
+
+        <div class="container-login100-form-btn">
+          <button
+            [disabled]="!btnView"
+            (click)="otpPage(form)"
+            class="login100-form-btn"
+          >
+            Continue
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>

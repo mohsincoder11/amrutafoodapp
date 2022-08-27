@@ -1,0 +1,144 @@
+<ion-header>
+  <ion-toolbar color="toolbar">
+    <ion-buttons slot="start">
+      <ion-icon name="receipt" style="font-size: 22px" (click)="goToOrderHistory()" class="ion-margin"></ion-icon>
+      <!-- <ion-menu-button
+        auto-hide="false"
+       
+      ></ion-menu-button> -->
+    </ion-buttons>
+
+    <ion-buttons slot="primary" (click)="cart()">
+      <ion-badge *ngIf="productCount != 0" style="
+          position: absolute;
+          right: 2px;
+          border: 2px solid #222428;
+          z-index: 1;
+          top: 1px;
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          font-size: 12px;
+        " color="primary" mode="ios">
+        <span style="font-size: smaller"> {{productCount }} </span>
+      </ion-badge>
+      <ion-button>
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="cart" style="font-size: 32px;">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="header_title">Amruta's Chicken</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="tertiary">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div *ngIf="product.length == 0">
+    <div align="center" style="margin-top: 50%">
+      <ion-spinner *ngIf="spinnerStatus" name="crescent"></ion-spinner>
+    </div>
+    <p align="center" style="color: black">Loading...</p>
+  </div>
+
+
+
+  <ion-slides *ngIf="didInit" #slides [options]="sliderOptions" class="main_slider">
+    <ion-slide class="slide_s" *ngFor="let item of offers;let j=index;" (click)="addToCart('from_offer',j)">
+      <ion-row>
+        <img src="{{ds.serverImage}}/{{item.image}}" alt="">
+
+      </ion-row>
+    </ion-slide>
+  </ion-slides>
+
+
+  <ion-row>
+    <ion-col *ngFor="let item of product; let i = index" size="12" style="padding:0 !important">
+      <ion-card class="product_cart">
+        <ion-row>
+          <ion-col size="3">
+            <img *ngIf="item.image != ''" src="{{ds.serverImage}}/{{item.image}}" />
+            <img *ngIf="item.image == ''" src="assets/chicken.jpg" class="ion-padding" />
+          </ion-col>
+
+          <ion-col size="9" class="padding_10">
+            <ion-label>
+              <p>
+                {{item.itemname}}
+              </p>
+            </ion-label>
+            <ion-label class="rate_label">
+              <b>&#8377; {{item.retailrate}} / kg </b>
+
+            </ion-label>
+            <div *ngIf="item.stock != 1">
+              <p align="center" style="color: rgb(214, 49, 49)">
+                <b>Out of stock</b>
+              </p>
+            </div>
+            <ion-row *ngIf="item.stock == 1">
+              <ion-col size="4">
+                <ion-input style="
+                    border-bottom: 1px solid;
+                    width: 80%;
+                    height: 50%;
+                    margin-left: 10%;
+                    padding-left: 5%;
+                  " [(ngModel)]="item.weight" (ionChange)="updateAmount($event, i, item.id)" type="number"
+                  value="{{item.weight}}">
+                </ion-input>
+              </ion-col>
+
+              <ion-col size="1">
+                <ion-label position="floating">kg.</ion-label>
+              </ion-col>
+              <ion-col size="3">
+                &nbsp; &#8377; <b><span class="change_rate" id="change_rate{{item.id}}"> {{item.retailrate}}</span></b>
+
+              </ion-col>
+              <ion-col size="4" style=" margin-bottom: 0%">
+                <div class="container-login100-form-btn">
+                  <button class="login100-form-btn" (click)="addToCart('from_regular',i)">
+                    Add
+                  </button>
+                </div>
+              </ion-col>
+
+
+            </ion-row>
+          </ion-col>
+
+        </ion-row>
+
+
+
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <div id="snackbar"> <span id="snackbar_error"></span></div>
+  <div *ngIf="loader_visible" class="lds-ripple">
+    <div></div>
+    <div></div>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="tertiary">
+    <ion-row class="ion_toolbar">
+      <ion-col size="4" style="text-align: center">
+        <ion-icon name="home-outline" size="large"></ion-icon>
+      </ion-col>
+      <ion-col size="4" style="text-align: center">
+        <ion-icon (click)="goToProfile()" size="large" name="person-outline"></ion-icon>
+      </ion-col>
+      <ion-col size="4" style="text-align: center">
+        <ion-icon (click)="settings()" size="large" name="settings-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

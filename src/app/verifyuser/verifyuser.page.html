@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar color="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:#fff; padding-left: 5%">Mobile Verification</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="header_title">
+    <p>
+      For mobile number verification, we will send you an OTP.
+
+    </p>
+  </div>
+  <div style="padding-left: 5%; padding-right: 5%">
+    <div
+      class="wrap-input100 validate-input m-b-50"
+      data-validate="Enter your otp"
+    >
+      <input
+        class="input100"
+        (keyup)="onKeyUP($event)"
+        max="4"
+        mode="ios"
+        name="number"
+        #number
+        required
+        type="number"
+      />
+      <span class="focus-input100" data-placeholder="Enter your otp"></span>
+      <p
+        class="m-1.5"
+        align="left"
+        *ngIf="status"
+        style="color: red; font-size: small"
+      >
+        Please enter valid OTP
+      </p>
+    </div>
+
+    <!-- <div style="margin-top: 50%" class="ion-margin" class="ion-padding">
+    <ion-input
+      (keyup)="onKeyUP($event.target.value)"
+      max="4"
+      mode="ios"
+      name="number"
+      #number
+      required
+      type="number"
+      placeholder="Enter Otp"
+    ></ion-input>
+    <p
+      class="m-1.5"
+      align="left"
+      *ngIf="status"
+      style="color: red; font-size: small"
+    >
+      Please enter valid OTP
+    </p>
+  </div> -->
+
+    <div class="container-login100-form-btn">
+      <button
+        (click)="verify()"
+        [disabled]="!validMobile"
+        class="login100-form-btn"
+      >
+        Verify otp
+      </button>
+    </div>
+  </div>
+
+  <!-- <ion-button
+    [disabled]="!validMobile"
+    mode="ios"
+    (click)="verify()"
+    expand="block"
+    style="margin-top: 20px"
+    color="success"
+  >
+    verify otp
+  </ion-button> -->
+
+  <ion-label
+    class="ion-margin"
+    class="ion-padding"
+    slot="end"
+    (click)="resendOTP()"
+    style="color: black"
+    >Resend OTP</ion-label
+  >
+</ion-content>
